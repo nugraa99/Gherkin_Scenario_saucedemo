@@ -49,13 +49,19 @@ Feature:   checkout products https://www.saucedemo.com/
     When    User click button "Remove"
     Then    the product will be removed from cart
 
+    Scenario: Users can add product, more than 1 product
+    Given   Users in Swag Labs homepage
+    And     User already add to cart product
+    When    User add to cart many product
+    Then    The product in the cart will be increase
+
     Scenario: Users can continue shopping in cart page
     Given   Users in cart page
     And     User already checkout product
     When    User click button "Continue Shopping"
     And     Users Click button "Add to cart" other product
     And     UsersClick cart icon
-    Then    the product will increase
+    Then    The product will increase
 
     Scenario: Users must enter their name and house number
     Given   Users in cart page
@@ -103,6 +109,7 @@ Feature:   checkout products https://www.saucedemo.com/
     Given   Error message is displayed on the Checkout: Your Information page
     When    Users clicks the X icon
     Then    The error message will disappears
+
 
 
 
